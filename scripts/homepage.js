@@ -109,7 +109,7 @@ function displayCourses(filter) {
     const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
     const creditsCount = document.createElement('p');
     creditsCount.textContent = `Total Credits: ${totalCredits}`;
-    // courseList.appendChild(creditsCount);
+    courseList.appendChild(creditsCount);
 }
 
 
