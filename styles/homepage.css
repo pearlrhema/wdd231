@@ -1,4 +1,6 @@
 /* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -69,7 +71,8 @@ nav {
 }
 
 .hamburger.active .line:nth-child(2) {
-    opacity: 0; /* Hide the middle line */
+    opacity: 0;
+    /* Hide the middle line */
 }
 
 .hamburger.active .line:nth-child(3) {
@@ -91,7 +94,7 @@ nav {
     z-index: 1000;
 }
 
-.navigation.show{
+.navigation.show {
     display: flex;
     margin: 1rem;
     /* Show navigation when toggled */
@@ -127,12 +130,13 @@ nav {
 }
 
 .card {
-    background-color: red;
     display: block;
+    align-items: center;
     text-align: center;
     border-radius: 5px;
     margin: 1rem auto;
     border: solid gray;
+    margin: 10px;
 }
 
 .card ul {
@@ -204,8 +208,9 @@ main section {
     /* padding: 1rem; */
 }
 
-.current-page::before  { 
-	content: "📍";  /* just a wayfinding symbol for the user */
+.current-page::before {
+    content: "📍";
+    /* just a wayfinding symbol for the user */
 }
 
 main ul {
@@ -226,7 +231,7 @@ h2 {
 }
 
 /* Responsive adjustments */
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 300px) {
     .hamburger {
         display: none;
         /* Hide hamburger on larger screens */
@@ -270,26 +275,36 @@ h2 {
 
     main {
         display: flex;
-        flex-wrap: wrap; /* Ensures sections wrap to new rows on smaller screens */
-        justify-content: center; /* Centers sections horizontally */
-        gap: 1rem; /* Adds space between each section */
-        padding: 1rem; /* Adds padding around the main content */
+        flex-wrap: wrap;
+        /* Ensures sections wrap to new rows on smaller screens */
+        justify-content: center;
+        /* Centers sections horizontally */
+        gap: 1rem;
+        /* Adds space between each section */
+        padding: 1rem;
+        /* Adds padding around the main content */
     }
-    
+
     main section {
-        flex: 1 1 300px; /* Allows sections to grow or shrink, with a minimum width of 300px */
-        max-width: 500px; /* Optional: Limits the width to 400px for larger screens */
+        flex: 1 1 300px;
+        /* Allows sections to grow or shrink, with a minimum width of 300px */
+        /* max-width: 500px; Optional: Limits the width to 400px for larger screens */
         display: flex;
-        flex-direction: column; /* Keeps the content inside each section in a column layout */
-        align-items: center; /* Centers the content within each section */
+        flex-wrap: wrap;
+        flex-direction: column;
+        /* Keeps the content inside each section in a column layout */
+        align-items: center;
+        /* Centers the content within each section */
     }
 
     .card {
-        width: 100%;
-        /* padding: 1rem; */
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: block;
+        align-items: center;
+        text-align: center;
         border-radius: 5px;
-        margin: 0;
+        margin: 1rem auto;
+        border: solid gray;
+        margin: 10px;
     }
-    
+
 }
