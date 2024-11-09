@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Godwin Essien">
+    <meta name="description" content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+    <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://soluap.com/wp-content/uploads/2022/11/DJI_0216-768x432-1.jpg">
+    <meta property="og:url" content="https://pearlrhema.github.io/wdd231/">
+    <title>Godwin Akpan Essien - WDD 230 - Web Frontend Development</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <script src="scripts/homepage.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="images/DSC_3581.JPG" alt="Godwin Akpan Essien Profile image">
+        <h1>Godwin Akpan Essien</h1>
+    </header>
+    <nav>
+        <div id="navtab">
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul class="navigation" id="nav-list">
+                <li><a href="#" class="current-page">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="card" id="course">
+            <h3>Course List</h3>
+            <ul>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
+            </ul>
+        </section>
+        <section class="card" id="place">
+            <h3>Akwa Ibom, Nigeria</h3>
+            <p>Ikot Ekpene</p>
+            <p>Weather</p>
+            <p>Number of visits</p>
+        </section>
+        <section class="card" id="completion">
+            <h3>Web and Computer Programming Certificate</h3>
+            <button id="show-all" class="button">All</button>
+            <button id="show-cse" class="button">CSE</button>
+            <button id="show-wdd" class="button">WDD</button>
+            <div id="course-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Your Name, Your State</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script src="scripts/homepage.js"></script>
+</body>
+
+</html>

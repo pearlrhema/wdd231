@@ -1,0 +1,295 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    padding: 35px;
+    background-color: aliceblue;
+    margin: 1rem auto;
+}
+
+header {
+    background-color: rgb(44, 88, 124);
+    display: grid;
+    align-items: center;
+    padding: 2rem 0 1rem 0;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+header img {
+    max-width: 150px;
+    border-radius: 50%;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px 0;
+    position: relative;
+    /* for absolute positioning of nav items */
+}
+
+/* Hamburger styles */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto;
+}
+
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Base hamburger style */
+.hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Style when the hamburger is toggled to an X */
+.hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg);
+    position: absolute;
+}
+
+.hamburger.active .line:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg);
+    position: absolute;
+}
+
+
+/* Navigation styles */
+.navigation {
+    display: none;
+    /* Hidden by default */
+    flex-direction: column;
+    /* position: absolute; */
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    z-index: 1000;
+}
+
+.navigation.show{
+    display: flex;
+    margin: 1rem;
+    /* Show navigation when toggled */
+}
+
+.navigation li {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    list-style-type: none;
+    margin: .5rem;
+    justify-content: center;
+}
+
+.navigation a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+.navigation a:hover {
+    background-color: #575757;
+}
+
+/* Card and button styling */
+.card h3 {
+    background-color: rgb(44, 88, 124);
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.card {
+    background-color: red;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    margin: 1rem auto;
+    border: solid gray;
+}
+
+.card ul {
+    margin-left: 1rem;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Course card */
+.course-card {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex: 1 1 100%; */
+    justify-content: center;
+    /* background-color: yellow; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: calc(100% - 15px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 0.5rem;
+}
+
+.course-card:hover {
+    transform: scale(1.02);
+}
+
+#course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* flex: 1 1 auto; */
+    /* justify-content: space-between; */
+    /* margin: 1rem; */
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: rgb(44, 88, 124);
+    color: white;
+    padding: 10px 0;
+}
+
+main section {
+    display: flex;
+    justify-content: center;
+    /* padding: 1rem; */
+}
+
+.current-page::before  { 
+	content: "📍";  /* just a wayfinding symbol for the user */
+}
+
+main ul {
+    text-align: left;
+    padding: 1px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.completed-course {
+    background-color: seagreen;
+}
+
+.incomplete-course {
+    background-color: yellow;
+}
+
+/* Responsive adjustments */
+@media only screen and (min-width: 500px) {
+    .hamburger {
+        display: none;
+        /* Hide hamburger on larger screens */
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .navigation {
+        display: flex;
+        /* Show navigation by default on larger screens */
+        list-style-type: none;
+        flex-direction: row;
+        /* Horizontal layout */
+        justify-content: space-between;
+        position: static;
+        background-color: transparent;
+    }
+
+    header {
+        grid-template-columns: 250px auto;
+        justify-content: center;
+    }
+
+    .course-card {
+        display: flex;
+        /* flex-direction: row; */
+        /* flex: 1 1 100%; */
+        justify-content: center;
+        /* background-color: yellow; */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        width: calc(30% - 1px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        margin: .5rem
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap; /* Ensures sections wrap to new rows on smaller screens */
+        justify-content: center; /* Centers sections horizontally */
+        gap: 1rem; /* Adds space between each section */
+        padding: 1rem; /* Adds padding around the main content */
+    }
+    
+    main section {
+        flex: 1 1 300px; /* Allows sections to grow or shrink, with a minimum width of 300px */
+        max-width: 500px; /* Optional: Limits the width to 400px for larger screens */
+        display: flex;
+        flex-direction: column; /* Keeps the content inside each section in a column layout */
+        align-items: center; /* Centers the content within each section */
+    }
+
+    .card {
+        width: 100%;
+        /* padding: 1rem; */
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: 0;
+    }
+    
+}

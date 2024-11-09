@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+nav {
+    background-color: #333;
+}
+
+#navtab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.navigation {
+    list-style: none;
+    display: flex;
+}
+
+.navigation li {
+    margin: 0 15px;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .navigation {
+        display: none;
+        /* Hide navigation by default */
+        flex-direction: column;
+        /* Stack items vertically */
+        position: absolute;
+        /* Position it absolutely */
+        top: 50px;
+        /* Adjust according to the height of the nav */
+        left: 0;
+        right: 0;
+        background-color: #333;
+    }
+
+    .navigation.show {
+        display: flex;
+        /* Show the menu when the 'show' class is added */
+    }
+
+    .hamburger {
+        display: flex;
+        /* Show hamburger icon on mobile */
+    }
+}
