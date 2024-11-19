@@ -2,123 +2,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    display: grid;
-    height: 100vh;
-    grid-template-rows: auto 1fr auto;
-    padding: 35px;
-    background-color: aliceblue;
-    margin: 1rem auto;
+    font-family: Roboto, sans-serif;
 }
 
 header {
-    background-color: rgb(44, 88, 124);
-    display: grid;
+    display: flex;
+    /* Makes header items align side by side */
+    flex-direction: row;
+    /* Default, aligns items horizontally */
     align-items: center;
-    padding: 2rem 0 1rem 0;
-    justify-content: center;
+    /* Centers items vertically */
+    justify-content: space-between;
+    /* Adds space between elements */
+    padding: 1rem;
+    background-color: rgb(44, 88, 124);
     color: white;
-    text-align: center;
+    text-align: left;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
 }
 
 header img {
-    max-width: 150px;
-    border-radius: 50%;
+    width: 50px;
+    /* Adjust size as needed */
+    height: auto;
+    margin-right: 1.5rem;
+    /* Adds spacing between the image and the text */
 }
 
-nav {
-    background-color: #333;
-    padding: 10px 0;
-    position: relative;
-    /* for absolute positioning of nav items */
-}
-
-/* Hamburger styles */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 100%;
-    cursor: pointer;
-    padding: 10px;
-    margin-left: auto;
-}
-
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-}
-
-/* Base hamburger style */
-.hamburger .line {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: all 0.3s ease;
-}
-
-/* Style when the hamburger is toggled to an X */
-.hamburger.active .line:nth-child(1) {
-    transform: rotate(45deg);
-    position: absolute;
-}
-
-.hamburger.active .line:nth-child(2) {
-    opacity: 0;
-    /* Hide the middle line */
-}
-
-.hamburger.active .line:nth-child(3) {
-    transform: rotate(-45deg);
-    position: absolute;
+header h1 {
+    font-size: 1.5rem;
+    /* Adjust for better scaling */
+    margin: 0;
 }
 
 
-/* Navigation styles */
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0;
+    color: #eee;
+}
+
+#menu::before {
+    content: "≡";
+}
+
 .navigation {
-    display: none;
-    /* Hidden by default */
-    flex-direction: column;
-    /* position: absolute; */
-    top: 50px;
-    left: 0;
-    right: 0;
-    background-color: #333;
-    z-index: 1000;
-}
-
-.navigation.show {
-    display: flex;
-    margin: 1rem;
-    /* Show navigation when toggled */
+    list-style: none;
+    margin: 0 auto;
+    max-width: 760px;
 }
 
 .navigation li {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 auto;
-    list-style-type: none;
-    margin: .5rem;
-    justify-content: center;
+    display: none;
 }
+
+nav {
+    background-color: black;
+}
+
+/* img{
+    display: none;
+} */
 
 .navigation a {
-    text-align: center;
-    color: white;
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
     text-decoration: none;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
+    color: whitesmoke;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: clamp(1rem, 2vmin, 1.5rem);
 }
 
-.navigation a:hover {
-    background-color: #575757;
+.navigation a:hover,
+a:active {
+    background-color: rgb(44, 88, 124);
+}
+
+.show li {
+    display: block;
+}
+
+#menu.show::before {
+    content: "X";
 }
 
 /* Card and button styling */
@@ -156,7 +133,7 @@ nav {
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: rgb(44, 88, 124);
     transform: scale(1.05);
 }
 
@@ -218,10 +195,6 @@ main ul {
     padding: 1px;
 }
 
-h2 {
-    text-align: center;
-}
-
 .completed-course {
     background-color: seagreen;
 }
@@ -231,31 +204,38 @@ h2 {
 }
 
 /* Responsive adjustments */
-@media only screen and (min-width: 300px) {
-    .hamburger {
-        display: none;
-        /* Hide hamburger on larger screens */
-    }
-
-    nav ul {
-        display: flex;
-        justify-content: center;
-    }
-
+@media only screen and (min-width: 576px) {
     .navigation {
         display: flex;
-        /* Show navigation by default on larger screens */
-        list-style-type: none;
-        flex-direction: row;
-        /* Horizontal layout */
-        justify-content: space-between;
-        position: static;
-        background-color: transparent;
+    }
+
+    .navigation li {
+        display: block;
+        /* change state in small view */
+        flex: 1 1 100%;
+    }
+
+    .navigation a {
+        text-align: center;
+    }
+
+    #menu {
+        display: none;
     }
 
     header {
+        /* background-color: rgb(44, 88, 124); */
+        display: grid;
         grid-template-columns: 250px auto;
+        align-items: center;
+        /* padding: 1rem; */
         justify-content: center;
+        color: white;
+    }
+
+    header img {
+        width: 150px;
+        height: auto;
     }
 
     .course-card {
