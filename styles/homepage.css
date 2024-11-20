@@ -1,14 +1,19 @@
 /* General styles */
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+} */
 
 body {
     font-family: Roboto, sans-serif;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
 }
 
 header {
@@ -58,8 +63,9 @@ header h1 {
 
 .navigation {
     list-style: none;
-    margin: 0 auto;
-    max-width: 760px;
+    margin: 1px;
+    padding: 0;
+    /* max-width: 760px; */
 }
 
 .navigation li {
@@ -70,9 +76,6 @@ nav {
     background-color: black;
 }
 
-/* img{
-    display: none;
-} */
 
 .navigation a {
     display: block;
@@ -145,8 +148,6 @@ a:active {
 /* Course card */
 .course-card {
     display: flex;
-    /* flex-direction: row; */
-    /* flex: 1 1 100%; */
     justify-content: center;
     /* background-color: yellow; */
     border: 1px solid #ddd;
@@ -166,9 +167,6 @@ a:active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* flex: 1 1 auto; */
-    /* justify-content: space-between; */
-    /* margin: 1rem; */
 }
 
 /* Footer styling */
@@ -226,7 +224,7 @@ main ul {
     header {
         /* background-color: rgb(44, 88, 124); */
         display: grid;
-        grid-template-columns: 250px auto;
+        grid-template-columns: 205px auto;
         align-items: center;
         /* padding: 1rem; */
         justify-content: center;
@@ -286,5 +284,4 @@ main ul {
         border: solid gray;
         margin: 10px;
     }
-
 }
