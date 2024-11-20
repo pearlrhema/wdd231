@@ -1,72 +1,74 @@
-[
-    {
-        "name": "NaijaTech Innovations",
-        "address": "12 Adeola Odeku Street, Victoria Island, Lagos",
-        "phone": "+234 701 234 5678",
-        "website": "https://www.naijatech.com.ng",
-        "image": "naijatech_logo.png",
-        "membershipLevel": 3,
-        "description": "Providing innovative tech solutions for Nigerian businesses.",
-        "category": "Technology"
-    },
-    {
-        "name": "GreenRoots Agro Ventures",
-        "address": "Plot 15, Kaduna-Abuja Expressway, Abuja",
-        "phone": "+234 803 456 7890",
-        "website": "https://www.greenroots.com.ng",
-        "image": "greenroots_logo.png",
-        "membershipLevel": 2,
-        "description": "Leaders in sustainable agriculture and food supply.",
-        "category": "Agriculture"
-    },
-    {
-        "name": "Jollof Haven Catering",
-        "address": "22 Allen Avenue, Ikeja, Lagos",
-        "phone": "+234 809 123 4567",
-        "website": "https://www.jollofhaven.com.ng",
-        "image": "jollofhaven_logo.png",
-        "membershipLevel": 1,
-        "description": "Specialists in authentic Nigerian cuisine for all occasions.",
-        "category": "Food & Beverage"
-    },
-    {
-        "name": "Eko Realty Services",
-        "address": "5 Marina Road, Lagos Island, Lagos",
-        "phone": "+234 805 678 9012",
-        "website": "https://www.ekorealty.com.ng",
-        "image": "ekorealty_logo.png",
-        "membershipLevel": 2,
-        "description": "Helping you find your dream property in Lagos and beyond.",
-        "category": "Real Estate"
-    },
-    {
-        "name": "SurePath Insurance",
-        "address": "10 Independence Avenue, Central Area, Abuja",
-        "phone": "+234 812 345 6789",
-        "website": "https://www.surepathinsurance.ng",
-        "image": "surepath_logo.png",
-        "membershipLevel": 3,
-        "description": "Reliable insurance plans tailored for Nigerians.",
-        "category": "Finance & Insurance"
-    },
-    {
-        "name": "AsoRock Fitness Hub",
-        "address": "Plot 20, Gwarinpa Estate, Abuja",
-        "phone": "+234 806 890 1234",
-        "website": "https://www.asorockfitness.com.ng",
-        "image": "asorockfitness_logo.png",
-        "membershipLevel": 2,
-        "description": "Premium fitness services for individuals and corporate clients.",
-        "category": "Health & Fitness"
-    },
-    {
-        "name": "LushGlam Beauty Spa",
-        "address": "34 Opebi Road, Ikeja, Lagos",
-        "phone": "+234 803 456 7891",
-        "website": "https://www.lushglamspa.ng",
-        "image": "lushglam_logo.png",
-        "membershipLevel": 1,
-        "description": "Offering world-class beauty treatments and spa services.",
-        "category": "Wellness & Beauty"
-    }
-]
+{
+    "businesses": [
+        {
+            "name": "NaijaTech Innovations",
+            "address": "12 Adeola Odeku Street, Victoria Island, Lagos",
+            "phone": "+234 701 234 5678",
+            "website": "https://www.naijatech.com.ng",
+            "image": "naijatech_logo.png",
+            "membershipLevel": 3,
+            "description": "Providing innovative tech solutions for Nigerian businesses.",
+            "category": "Technology"
+        },
+        {
+            "name": "GreenRoots Agro Ventures",
+            "address": "Plot 15, Kaduna-Abuja Expressway, Abuja",
+            "phone": "+234 803 456 7890",
+            "website": "https://www.greenroots.com.ng",
+            "image": "greenroots_logo.png",
+            "membershipLevel": 2,
+            "description": "Leaders in sustainable agriculture and food supply.",
+            "category": "Agriculture"
+        },
+        {
+            "name": "Jollof Haven Catering",
+            "address": "22 Allen Avenue, Ikeja, Lagos",
+            "phone": "+234 809 123 4567",
+            "website": "https://www.jollofhaven.com.ng",
+            "image": "jollofhaven_logo.png",
+            "membershipLevel": 1,
+            "description": "Specialists in authentic Nigerian cuisine for all occasions.",
+            "category": "Food & Beverage"
+        },
+        {
+            "name": "Eko Realty Services",
+            "address": "5 Marina Road, Lagos Island, Lagos",
+            "phone": "+234 805 678 9012",
+            "website": "https://www.ekorealty.com.ng",
+            "image": "ekorealty_logo.png",
+            "membershipLevel": 2,
+            "description": "Helping you find your dream property in Lagos and beyond.",
+            "category": "Real Estate"
+        },
+        {
+            "name": "SurePath Insurance",
+            "address": "10 Independence Avenue, Central Area, Abuja",
+            "phone": "+234 812 345 6789",
+            "website": "https://www.surepathinsurance.ng",
+            "image": "surepath_logo.png",
+            "membershipLevel": 3,
+            "description": "Reliable insurance plans tailored for Nigerians.",
+            "category": "Finance & Insurance"
+        },
+        {
+            "name": "AsoRock Fitness Hub",
+            "address": "Plot 20, Gwarinpa Estate, Abuja",
+            "phone": "+234 806 890 1234",
+            "website": "https://www.asorockfitness.com.ng",
+            "image": "asorockfitness_logo.png",
+            "membershipLevel": 2,
+            "description": "Premium fitness services for individuals and corporate clients.",
+            "category": "Health & Fitness"
+        },
+        {
+            "name": "LushGlam Beauty Spa",
+            "address": "34 Opebi Road, Ikeja, Lagos",
+            "phone": "+234 803 456 7891",
+            "website": "https://www.lushglamspa.ng",
+            "image": "lushglam_logo.png",
+            "membershipLevel": 1,
+            "description": "Offering world-class beauty treatments and spa services.",
+            "category": "Wellness & Beauty"
+        }
+    ]
+}
