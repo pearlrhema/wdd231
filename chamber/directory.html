@@ -4,25 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="European Travel Destinations">
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
-    <meta property="og:url" content="http://euro-travel-example.com/index.htm">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <!--  Non-Essential, But Recommended -->
-    <meta property="og:description" content="Offering tour packages for individuals or groups.">
-    <meta property="og:site_name" content="European Travel, Inc.">
-    <meta name="twitter:image:alt" content="Alt text for image">
-
-    <!--  Non-Essential, But Required for Analytics -->
-    <meta property="fb:app_id" content="your_app_id" />
-    <meta name="twitter:site" content="@website-username">
-    <title>Document</title>
+    <meta name="author" content="Godwin Essien">
+    <meta name="description" content="This is a WDD 231 - Web Frontend Development - Chamber of commerce project">
+    <meta property="og:title" content="Chamber of Commerce Project"> <!-- Title of the webpage -->
+    <meta property="og:type" content="website"> <!-- The type of content (e.g., website, article, etc.) -->
+    <meta property="og:image"
+        content="https://www.dhl.com/discover/adobe/dynamicmedia/deliver/dm-aid--ba111afc-4d80-49fc-95ce-265bca18fd2c/A%20Guide%20for%20Nigerian%20Small%20Businesses%20on%20Tapping%20into%20the%20Diaspora%20Market.jpg?quality=82&preferwebp=true">
+    <!-- URL of the image -->
+    <meta property="og:url" content="http://euro-travel-example.com/index.htm"> <!-- Canonical URL of the webpage -->
+    <meta property="og:description" content="Connecting businesses and fostering economic growth.">
+    <!-- A short description -->
+    <meta property="og:site_name" content="Chamber of Commerce Project"> <!-- The name of the website -->
+    <meta property="fb:app_id" content="your_app_id"> <!-- Replace with your actual Facebook App ID -->
+    <title>Chamber of Commerce Project</title>
+    <link rel="icon" href="webpagefavicon.ico">
 </head>
 
-<body>
+<header>
+    <img src="images/uptimized-image.webp" alt="Godwin Akpan Essien Profile image">
+    <h1>Godwin Akpan Essien</h1>
+    <a id="menu" href="#"></a>
+</header>
 
+<nav>
+    <ul class="navigation">
+        <li><a href="#" class="current-page">Home</a></li>
+        <li><a href="#">Directory</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="#">Discover</a></li>
+    </ul>
+</nav>
+
+<body>
+    <main>
+        <h2>Home</h2>
+        <section class="card" id="course">
+            <h3>Event</h3>
+            <ul>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
+            </ul>
+        </section>
+        <section class="card" id="place">
+            <h3>Current Weather</h3>
+            <p>Ikot Ekpene</p>
+            <p>Weather</p>
+            <p>Number of visits</p>
+        </section>
+        <section>
+            <h3>Weather Forcast</h3>
+        </section>
+        <section>
+            <div id="company-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Godwin Akpan Essien, Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 
 </html>
