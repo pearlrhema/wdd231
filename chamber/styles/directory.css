@@ -1,0 +1,202 @@
+/* Main Container for Cards */
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Business Card Styling */
+.business-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    width: 180px; /* Adjusted for smaller cards */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    margin: 10px; /* Ensures spacing between cards */
+}
+
+.business-card img {
+    width: 80px; /* Smaller size for the image */
+    height: 80px; /* Ensure the image stays round and fits inside the card */
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.business-card h2 {
+    font-size: 1rem; /* Adjusted for smaller text */
+    margin: 10px 0;
+}
+
+.business-card span {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #fff;
+    background: #007bff;
+}
+
+.membership-level-1 {
+    background: gold;
+}
+
+.membership-level-2 {
+    background: silver;
+}
+
+.membership-level-3 {
+    background: bronze;
+}
+
+.business-card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.business-card a:hover {
+    text-decoration: underline;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgb(44, 88, 124);
+    color: white;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+    margin-right: 1.5rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Mobile Menu */
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #eee;
+}
+
+#menu::before {
+    content: "≡";
+}
+
+.navigation {
+    list-style: none;
+    margin: 1px;
+    padding: 0;
+}
+
+.navigation li {
+    display: none;
+}
+
+nav {
+    background-color: black;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.navigation a:hover,
+a:active {
+    background-color: rgb(44, 88, 124);
+}
+
+.show li {
+    display: block;
+}
+
+#menu.show::before {
+    content: "X";
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: rgb(44, 88, 124);
+    color: white;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media only screen and (min-width: 576px) {
+    .navigation {
+        display: flex;
+    }
+
+    .navigation li {
+        display: block;
+    }
+
+    .navigation a {
+        text-align: center;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 205px auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header img {
+        width: 150px;
+        height: auto;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    main section {
+        flex: 1 1 300px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjust business card styling for larger screens */
+    .business-card {
+        width: 200px; /* Slightly larger for larger screens */
+    }
+
+    h2 {
+        display: block;
+    }
+}

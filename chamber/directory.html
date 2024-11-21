@@ -18,7 +18,8 @@
     <meta property="fb:app_id" content="your_app_id"> <!-- Replace with your actual Facebook App ID -->
     <title>Chamber of Commerce Project</title>
     <link rel="icon" href="webpagefavicon.ico">
-    <script src="scripts/directory.js" defer></script>
+    <link rel="stylesheet" href="styles/directory.css">
+    <script src="scripts/directory2.js" defer></script>
 </head>
 
 <header>
@@ -37,8 +38,9 @@
 </nav>
 
 <body>
+    <h2>Home</h2>
     <main>
-        <h2>Home</h2>
+
         <section class="card" id="course">
             <h3>Event</h3>
             <ul>
@@ -53,11 +55,10 @@
             <p>Weather</p>
             <p>Number of visits</p>
         </section>
-        <section>
+        <section class="card">
             <h3>Weather Forcast</h3>
         </section>
-        <section>
-            <div id="cards"></div>
+        <section id="cards">
         </section>
     </main>
     <footer>
