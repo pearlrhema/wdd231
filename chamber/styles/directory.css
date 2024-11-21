@@ -123,8 +123,6 @@ h3{
     height: 80px; /* Ensure the image stays round and fits inside the card */
     border-radius: 50%;
     margin-bottom: 12px;
-    margin: 0;
-    padding: 0;
     align-self: center;
 }
 
