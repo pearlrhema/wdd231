@@ -1,17 +1,103 @@
-/* Main Container for Cards */
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+h3{
+    width: 100%;
+    text-align: center;
+}
+
 #cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    /* flex-direction: column; */
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    width: 100%;
     justify-content: center;
-    padding: 20px;
 }
 
-/* Business Card Styling */
+#cards h3{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.menu{
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    justify-content: center;
+    align-items: start;
+}
+
+.grid section {
+	text-align: center;
+}
+
+.grid img {
+	border: 1px solid #fff;
+	box-shadow: 0 0 10px #333;
+}
+
+.grid section > * {
+	margin: 0.1rem;
+}
+
+.grid h3 {
+	font-family: "Caveat", cursive;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.list section {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	margin: 0;
+	padding: 0.25rem;
+}
+
+.list section > * {
+	margin: 0 1rem;
+}
+
+.list section img {
+	display: none; /* smaller viewports only */
+}
+
+.list section h3 {
+	font-size: 1rem;
+	font-family: Roboto, Helvetica, sans-serif;
+}
+
+.list section:nth-child(even) {
+	background-color: #bed;
+}
+
 .business-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
+    border: 1px solid #241313;
     border-radius: 8px;
     padding: 12px;
     width: 180px; /* Adjusted for smaller cards */
@@ -19,6 +105,17 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: #fff;
     margin: 10px; /* Ensures spacing between cards */
+    width: 15rem;
+    height: auto;
+}
+
+.list .business-card {
+    display: block;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    border: none;
 }
 
 .business-card img {
@@ -26,11 +123,49 @@
     height: 80px; /* Ensure the image stays round and fits inside the card */
     border-radius: 50%;
     margin-bottom: 12px;
+    align-self: center;
+}
+
+
+.list .business-card a {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.list .business-card img{
+    display: none;
+}
+
+.list .business-card .membership-level-1{
+    display: none;
+}
+
+.list .business-card .membership-level-2{
+    display: none;
+}
+
+.list .business-card .membership-level-3{
+    display: none;
+}
+
+.list .business-card a:hover {
+    text-decoration: underline;
+}
+
+.list .business-card:nth-child(odd){
+    background-color: #ede7e7;
+}
+
+.list .business-card:nth-child(even){
+    background-color: white;
 }
 
 .business-card h2 {
     font-size: 1rem; /* Adjusted for smaller text */
-    margin: 10px 0;
+    /* margin: 10px 0; */
+    margin: 0;
 }
 
 .business-card span {
@@ -39,7 +174,7 @@
     padding: 4px 8px;
     border-radius: 4px;
     color: #fff;
-    background: #007bff;
+    /* background: #007bff; */
 }
 
 .membership-level-1 {
@@ -51,13 +186,13 @@
 }
 
 .membership-level-3 {
-    background: bronze;
+    background: brown;
 }
 
 .business-card a {
     display: inline-block;
     margin-top: 12px;
-    color: #007bff;
+    /* color: #007bff; */
     text-decoration: none;
 }
 
@@ -65,33 +200,44 @@
     text-decoration: underline;
 }
 
-/* Header Styles */
 header {
     display: flex;
+    /* Makes header items align side by side */
+    flex-direction: row;
+    /* Default, aligns items horizontally */
     align-items: center;
+    /* Centers items vertically */
     justify-content: space-between;
+    /* Adds space between elements */
     padding: 1rem;
     background-color: rgb(44, 88, 124);
     color: white;
+    text-align: left;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 header img {
     width: 50px;
+    /* Adjust size as needed */
     height: auto;
     margin-right: 1.5rem;
+    /* Adds spacing between the image and the text */
 }
 
 header h1 {
     font-size: 1.5rem;
+    /* Adjust for better scaling */
     margin: 0;
 }
 
-/* Mobile Menu */
+
 #menu {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     text-decoration: none;
+    padding: 0;
     color: #eee;
 }
 
@@ -103,6 +249,7 @@ header h1 {
     list-style: none;
     margin: 1px;
     padding: 0;
+    /* max-width: 760px; */
 }
 
 .navigation li {
@@ -112,6 +259,7 @@ header h1 {
 nav {
     background-color: black;
 }
+
 
 .navigation a {
     display: block;
@@ -137,7 +285,76 @@ a:active {
     content: "X";
 }
 
-/* Footer Styling */
+/* Card and button styling */
+.card h3 {
+    background-color: rgb(44, 88, 124);
+    color: white;
+    text-align: center;
+    margin-top: 0;
+}
+
+.card {
+    display: block;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+    margin: 1rem auto;
+    border: solid gray;
+    margin: 10px;
+}
+
+.card ul {
+    margin-left: 1rem;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: rgb(44, 88, 124);
+    transform: scale(1.05);
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Course card */
+.course-card {
+    display: flex;
+    justify-content: center;
+    /* background-color: yellow; */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: calc(100% - 15px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 0.5rem;
+}
+
+.course-card:hover {
+    transform: scale(1.02);
+}
+
+#course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+}
+
+/* Footer styling */
 footer {
     text-align: center;
     background-color: rgb(44, 88, 124);
@@ -145,7 +362,47 @@ footer {
     padding: 10px 0;
 }
 
-/* Responsive Design */
+main section {
+    display: flex;
+    justify-content: center;
+    /* padding: 1rem; */
+}
+
+.current-page::before {
+    content: "📍";
+    /* just a wayfinding symbol for the user */
+}
+
+main ul {
+    text-align: left;
+    padding: 1px;
+}
+
+.completed-course {
+    background-color: seagreen;
+}
+
+.incomplete-course {
+    background-color: yellow;
+}
+
+/* .grid .business-card {
+    height: auto;
+    width: 100%;
+} */
+
+
+
+/* .list .business-card img {
+    margin-right: 1rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.list .business-card > *:not(img) {
+    margin: 0.5rem;
+} */
+/* Responsive adjustments */
 @media only screen and (min-width: 576px) {
     .navigation {
         display: flex;
@@ -153,6 +410,8 @@ footer {
 
     .navigation li {
         display: block;
+        /* change state in small view */
+        flex: 1 1 100%;
     }
 
     .navigation a {
@@ -164,10 +423,13 @@ footer {
     }
 
     header {
+        /* background-color: rgb(44, 88, 124); */
         display: grid;
         grid-template-columns: 205px auto;
         align-items: center;
+        /* padding: 1rem; */
         justify-content: center;
+        color: white;
     }
 
     header img {
@@ -175,28 +437,53 @@ footer {
         height: auto;
     }
 
+    .course-card {
+        display: flex;
+        /* flex-direction: row; */
+        /* flex: 1 1 100%; */
+        justify-content: center;
+        /* background-color: yellow; */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        width: calc(30% - 1px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+        margin: .5rem
+    }
+
     main {
         display: flex;
         flex-wrap: wrap;
+        /* Ensures sections wrap to new rows on smaller screens */
         justify-content: center;
+        /* Centers sections horizontally */
         gap: 1rem;
+        /* Adds space between each section */
         padding: 1rem;
+        /* Adds padding around the main content */
     }
 
     main section {
         flex: 1 1 300px;
+        /* Allows sections to grow or shrink, with a minimum width of 300px */
+        /* max-width: 500px; Optional: Limits the width to 400px for larger screens */
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        /* Keeps the content inside each section in a column layout */
         align-items: center;
+        /* Centers the content within each section */
     }
 
-    /* Adjust business card styling for larger screens */
-    .business-card {
-        width: 200px; /* Slightly larger for larger screens */
-    }
-
-    h2 {
-        display: block;
+    .card {
+        /* display: block; */
+        align-items: center;
+        text-align: center;
+        border-radius: 5px;
+        margin: 1rem auto;
+        border: solid gray;
+        margin: 10px;
+        /* background-color: yellow; */
     }
 }

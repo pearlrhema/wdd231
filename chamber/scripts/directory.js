@@ -1,3 +1,6 @@
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+
 const url = 'https://pearlrhema.github.io/wdd231/chamber/data/members.json';
 const cards = document.querySelector('#cards'); // The container for business cards
 
@@ -10,7 +13,7 @@ async function getBusinessData() {
 
     // Access the "businesses" array from the JSON data
     const businesses = data.businesses;
-    console.log(businesses);
+    // console.log(businesses);
 
     // Loop through each business and create cards
     businesses.forEach(business => {
@@ -64,5 +67,34 @@ async function getBusinessData() {
     });
 }
 
-// Call the function to fetch and display data
+const gridbutton = document.querySelector("#grid");
+const listbutton = document.querySelector("#list");
+const display = document.querySelector("#cards");
+
+// The following code could be written cleaner. How? We may have to simplfiy our HTMl and think about a default view.
+
+gridbutton.addEventListener("click", () => {
+    // example using arrow function
+    display.classList.add("grid");
+    display.classList.remove("list");
+});
+
+listbutton.addEventListener("click", showList); // example using defined function
+
+function showList() {
+    display.classList.add("list");
+    display.classList.remove("grid");
+}
+
+// Toggle navigation menu
+const mainnav = document.querySelector('.navigation')
+const hambutton = document.querySelector('#menu');
+
+// Add a click event listender to the hamburger button and use a callback function that toggles the list element's list of classes.
+hambutton.addEventListener('click', () => {
+    mainnav.classList.toggle('show');
+    hambutton.classList.toggle('show');
+});
+
+    // Call the function to fetch and display data
 getBusinessData();

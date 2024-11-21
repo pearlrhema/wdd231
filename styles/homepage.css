@@ -167,6 +167,7 @@ a:active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: black;
 }
 
 /* Footer styling */
@@ -276,12 +277,13 @@ main ul {
     }
 
     .card {
-        display: block;
+        /* display: block; */
         align-items: center;
         text-align: center;
         border-radius: 5px;
         margin: 1rem auto;
         border: solid gray;
         margin: 10px;
+        background-color: yellow;
     }
 }

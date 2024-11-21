@@ -6,62 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Godwin Essien">
     <meta name="description"
-        content="This is a WDD 230 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
-    <meta property="og:title" content="Godwin Akpan Essien - WDD230 Course Home Page">
+        content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+    <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://soluap.com/wp-content/uploads/2022/11/DJI_0216-768x432-1.jpg">
-    <meta property="og:url" content="https://pearlrhema.github.io/wdd230/">
-    <title>Godwin Akpan Essien - WDD 230 - Web Frontend Development</title>
-    <link rel="icon" href="images/favicon.ico">
+    <!-- <meta property="og:url" content="https://pearlrhema.github.io/wdd231/"> -->
+    <title>Godwin Akpan Essien - WDD 231 - Web Frontend Development 1</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!--this needs to come first in order for the css to follow the correct order-->
-    <link rel="stylesheet" href="/styles/newNormalize.css">
-    <link rel="stylesheet" href="/styles/new.css">
-    <script src="/scripts/homepage.js" defer></script>
+    <link rel="stylesheet" href="/styles/newhomepage.css">
+    <!-- <script src="/scripts/homepage.js" defer></script> -->
 </head>
 
 <body>
     <header>
-        <img src="/images/DSC_3581.JPG" alt="Godwin Akpan Essien Profile image">
+        <img src="/images/uptimized-image.webp" alt="Godwin Akpan Essien Profile image">
         <h1>Godwin Akpan Essien</h1>
+        <a id="menu" href="#"></a>
     </header>
+
     <nav>
-        <div id="navtab">
-            <ul class="navigation">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </div>
+        <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#" class="current-page">Directory</a></li>
+            <li><a href="#">Join</a></li>
+            <li><a href="#">Discover</a></li>
+        </ul>
     </nav>
-    <Main>
-        <section class="card">
-            <h3>Course List</h3>
+    <main>
+        <section class="card" id="course">
+            <h3>Event</h3>
             <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
             </ul>
         </section>
-        <section class="card">
-            <h3>Akwa Ibom, Nigeria</h3>
+        <section class="card" id="place">
+            <h3>Current Weather</h3>
             <p>Ikot Ekpene</p>
-            <p>weather</p>
-            <p>no. of visits</p>
+            <p>Weather</p>
+            <p>Number of visits</p>
         </section>
-        <section class="card">
-            <h3>Web and Computer Programming Certificate</h3>
+        <section class="card" id="completion">
+            <h3>Weather Forecast</h3>
             <div id="course-list"></div>
-            <button id="show-all">All</button>
-            <button id="show-cse">CSE</button>
-            <button id="show-wdd">WDD</button>
         </section>
+        <h3>Business List</h3>
+        <div class="menu">
+            <button id="grid">⏹️Grid</button>
+            <button id="list">📄List</button>
+        </div>
+        <div id="cards">
+
+        </div>
     </main>
     <footer>
-        <p>&copy; <span id="currentyear"></span> Your Name, Your State</p>
+        <p>&copy; <span id="currentyear"></span> Godwin Akpan Essien, Nigeria</p>
         <p id="lastModified"></p>
     </footer>
+    <script src="../chamber/scripts/directory2.js" defer></script>
 </body>
 
 </html>
