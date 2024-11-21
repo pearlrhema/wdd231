@@ -56,7 +56,7 @@ async function getBusinessData() {
         // Append all elements to the card container
         card.appendChild(img);
         card.appendChild(name);
-        card.appendChild(membershipLevel);
+        // card.appendChild(membershipLevel);
         card.appendChild(description);
         card.appendChild(address);
         card.appendChild(phone);
