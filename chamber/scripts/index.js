@@ -8,8 +8,8 @@ const captionDesc = document.querySelector('figcaption');
 const apiKey = '6b70cd58810743af1f00f42a0ac56a1c'; // Your OpenWeatherMap API key
 const latitude = '5.1755'; // Ikot Ekpene, Nigeria latitude
 const longitude = '7.7122'; // Ikot Ekpene, Nigeria longitude
-const weatherUrl = `//api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}&units=imperial`;
-const forcastUrl = `//api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}&units=imperial`;
+const forcastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
 // Fetch data from the OpenWeatherMap API
 async function weatherFetch() {
     try {
@@ -45,46 +45,82 @@ async function forcastFetch() {
 
 // Function to display weather results
 function displayWeather(data) {
+    // Get references to the temperature span and figure element
+    const currentTemp = document.querySelector('#current-temp');
+    const weatherFigure = document.querySelector('#weather-icon');
+
+    // Update the temperature display
     currentTemp.innerHTML = `${data.main.temp}&deg;F`;
-    const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    let desc = data.weather[0].description;
-    weatherIcon.setAttribute('SRC', iconsrc);
-    weatherIcon.setAttribute('alt', desc);
-    captionDesc.textContent = `${desc}`;
+
+    // Create a new <img> element for the weather icon
+    const img = document.createElement('img');
+    img.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`; // Set icon source
+    img.alt = data.weather[0].description; // Set alt text for accessibility
+    img.width = "50";
+
+    // Create a <figcaption> element for the weather description
+    const figcaption = document.createElement('figcaption');
+    figcaption.textContent = data.weather[0].description;
+
+    // Clear existing content in the figure to prevent duplicates
+    weatherFigure.innerHTML = '';
+
+    // Append the new <img> and <figcaption> elements to the figure
+    weatherFigure.appendChild(img);
+    weatherFigure.appendChild(figcaption);
 }
-
-const dayOne = document.querySelector("#dayone");
-const dayTwo = document.querySelector("#daytwo");
-const dayThree = document.querySelector("#daythree");
-const description1 = document.querySelector("#description1");
-const description2 = document.querySelector("#description2");
-const description3 = document.querySelector("#description3");
-
 
 
 function displayForcast(data) {
-    const icons = [
-        `https://openweathermap.org/img/wn/${data.list[0].weather[0].icon}@2x.png`,
-        `https://openweathermap.org/img/wn/${data.list[1].weather[0].icon}@2x.png`,
-        `https://openweathermap.org/img/wn/${data.list[2].weather[0].icon}@2x.png`
+    // Array of forecast data for the first three days
+    const forecastData = [
+        {
+            temp: data.list[0].main.temp,
+            description: data.list[0].weather[0].description,
+            icon: data.list[0].weather[0].icon,
+            containerId: "icon1",
+        },
+        {
+            temp: data.list[1].main.temp,
+            description: data.list[1].weather[0].description,
+            icon: data.list[1].weather[0].icon,
+            containerId: "icon2",
+        },
+        {
+            temp: data.list[2].main.temp,
+            description: data.list[2].weather[0].description,
+            icon: data.list[2].weather[0].icon,
+            containerId: "icon3",
+        },
     ];
 
-    dayOne.innerHTML = `${data.list[0].main.temp}&deg;F`;
-    dayTwo.innerHTML = `${data.list[1].main.temp}&deg;F`;
-    dayThree.innerHTML = `${data.list[2].main.temp}&deg;F`;
+    // Loop through the forecast data
+    forecastData.forEach((forecast, index) => {
+        // Get the container for the current forecast
+        const container = document.getElementById(forecast.containerId);
 
-    description1.textContent = data.list[0].weather[0].description;
-    description2.textContent = data.list[1].weather[0].description;
-    description3.textContent = data.list[2].weather[0].description;
+        // Clear existing content in the container
+        container.innerHTML = '';
 
-    document.querySelector("#icon1").src = icons[0];
-    document.querySelector("#icon1").alt = data.list[0].weather[0].description;
+        // Create and populate <p> elements for temperature and description
+        const tempParagraph = document.createElement('p');
+        tempParagraph.innerHTML = `Day ${index + 1}: <span>${forecast.temp}&deg;F</span>`;
 
-    document.querySelector("#icon2").src = icons[1];
-    document.querySelector("#icon2").alt = data.list[1].weather[0].description;
+        const descSpan = document.createElement('span');
+        descSpan.textContent = ` ${forecast.description}`;
 
-    document.querySelector("#icon3").src = icons[2];
-    document.querySelector("#icon3").alt = data.list[2].weather[0].description;
+        tempParagraph.appendChild(descSpan);
+
+        // Create and set up the <img> element for the weather icon
+        const img = document.createElement('img');
+        img.src = `https://openweathermap.org/img/wn/${forecast.icon}@2x.png`;
+        img.alt = forecast.description;
+        img.width = "50";
+
+        // Append the temperature paragraph and the image to the container
+        container.appendChild(tempParagraph);
+        container.appendChild(img);
+    });
 }
 
 const url = 'https://pearlrhema.github.io/wdd231/chamber/data/members.json';
@@ -124,15 +160,12 @@ function displayBusinessCards(businesses) {
 function createBusinessCard(business) {
     return `
         <div class="business-card">
-            <img src="${business.image}" alt="${business.name} Logo">
+            <img src="${business.image}" alt="${business.name} Logo" loading="lazy">
             <h2>${business.name}</h2>
             <p>${business.description}</p>
             <p><strong>Address:</strong> ${business.address}</p>
             <p><strong>Phone:</strong> ${business.phone}</p>
             <a href="${business.website}" target="_blank">Visit Website</a>
-            <span class="membership-level-${business.membershipLevel}">
-                ${['Member', 'Silver', 'Gold'][business.membershipLevel - 1]}
-            </span>
         </div>
     `;
 }
