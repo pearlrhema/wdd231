@@ -1,6 +1,12 @@
 /* General styles */
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Roboto, sans-serif;
     height: 100%;
@@ -208,8 +214,9 @@ h3 {
 
 header {
     display: flex;
+    flex-wrap: wrap;
     /* Makes header items align side by side */
-    flex-direction: row;
+    flex-direction: column;
     /* Default, aligns items horizontally */
     align-items: center;
     /* Centers items vertically */
@@ -227,14 +234,15 @@ header img {
     width: 50px;
     /* Adjust size as needed */
     height: auto;
-    margin-right: 1.5rem;
+    /* margin-right: 1.5rem; */
     /* Adds spacing between the image and the text */
 }
 
 header h1 {
     font-size: 1.5rem;
     /* Adjust for better scaling */
-    margin: 0;
+    margin-top: 10px;
+    text-align: center;
 }
 
 
@@ -245,6 +253,9 @@ header h1 {
     text-decoration: none;
     padding: 0;
     color: #eee;
+    border: solid gray;
+    border-radius: 20%;
+    margin-top: 10px;
 }
 
 #menu::before {
@@ -255,6 +266,7 @@ header h1 {
     list-style: none;
     margin: 1px;
     padding: 0;
+    background-color: solid gray;
     /* max-width: 760px; */
 }
 
@@ -263,6 +275,7 @@ header h1 {
 }
 
 nav {
+    border: solid gray;
     background-color: black;
 }
 
@@ -285,10 +298,68 @@ a:active {
 
 .show li {
     display: block;
+    justify-self: center;
 }
 
 #menu.show::before {
     content: "X";
+}
+/* .hero {
+    display: block;
+    justify-content: center;
+    text-align: center;
+} */
+
+.hero{
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+
+.hero img{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+}
+
+.content:hover{
+    opacity: 1;
+}
+
+.content > *{
+    transform:translateY(25px);
+    transition: transform 0.6s;
+}
+
+.content:hover > *{
+    transform:translateY(0px);
+    /* transition: transform 0.6s; */
+}
+
+.cta-link{
+    /* background-color: rgb(44, 88, 124); */
+    color: white;
+    text-decoration: none;
+    /* border: 3px solid rgb(44, 88, 124) ; */
+    border:3px solid white;
+    background-color: rgb(44, 88, 124);
+    border-radius: 7%;
+    text-transform: capitalize;
+    width: 25%;
+    text-align: center;
 }
 
 /* Card and button styling */
@@ -335,6 +406,14 @@ a:active {
     cursor: not-allowed;
 }
 
+figcaption {
+    text-transform: capitalize;
+}
+
+#current-temp {
+    font-size: 1rem;
+}
+
 /* Course card */
 .course-card {
     display: flex;
@@ -374,11 +453,22 @@ main section {
     /* padding: 1rem; */
 }
 
+main{
+    display: block;
+    /* align-self: center; */
+}
+
 .current-page::before {
     content: "📍";
     /* just a wayfinding symbol for the user */
 }
+picture img{
+    position: relative;
+}
 
+picture a{
+    position: relative;
+}
 main ul {
     text-align: left;
     padding: 1px;
@@ -390,6 +480,16 @@ main ul {
 
 .incomplete-course {
     background-color: yellow;
+}
+
+.call-to-action {
+    display: block;
+    text-align: center;
+}
+
+.call-to-action h3,
+p {
+    margin: 10px 0;
 }
 
 /* .grid .business-card {

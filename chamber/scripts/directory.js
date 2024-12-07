@@ -96,5 +96,5 @@ hambutton.addEventListener('click', () => {
     hambutton.classList.toggle('show');
 });
 
-    // Call the function to fetch and display data
+// Call the function to fetch and display data
 getBusinessData();
