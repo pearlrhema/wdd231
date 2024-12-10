@@ -1,0 +1,15 @@
+*{box-sizing: border-box;}
+
+#mydialog{
+    box-shadow: 0 0 3rem #777;
+    width: 90%;
+    padding: 0;
+}
+
+#mydialog div{
+    display: grid;
+    grid-template-columns: auto 44px;
+    background-color: #ddd;
+    padding: 5px;
+    width: 100%;
+}

@@ -1,6 +1,17 @@
 document.getElementById('currentyear').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
 
+const mydialog = document.querySelector("#mydialog");
+const mydialogh1 = document.querySelector("#mydialog h1");
+const mydialogh2 = document.querySelector("#mydialog h2");
+const mydialogCloseButton = document.querySelector("#mydialog button");
+const mydialogInfo = document.querySelector("#mydialog p");
+
+mydialogCloseButton.addEventListener("click", () => {
+    mydialog.close();
+})
+
+
 const courses = [
     {
         subject: 'CSE',
@@ -102,7 +113,12 @@ function displayCourses(filter) {
         }
 
         courseCard.textContent = `${course.subject} ${course.number}`;
+        courseCard.addEventListener("click", () => showStuff(course));
+        // courseCard.addEventListener("click", () => showStuff(details));
+
+
         courseList.appendChild(courseCard);
+
     });
 
     // Update total credits
@@ -127,6 +143,17 @@ const hambutton = document.querySelector('#menu');
 
 // Add a click event listender to the hamburger button and use a callback function that toggles the list element's list of classes.
 hambutton.addEventListener('click', () => {
-	mainnav.classList.toggle('show');
-	hambutton.classList.toggle('show');
+    mainnav.classList.toggle('show');
+    hambutton.classList.toggle('show');
 });
+
+// const mydialog = document.querySelector("#mydialog");
+// const mydialogh2 = document.querySelector("#mydialog h2");
+// const mydialogCloseButton = document.querySelector("#mydialog button");
+// const mydialogInfo = document.querySelector("#mydialog p");
+function showStuff(details) {
+    mydialogh1.innerHTML = `${details.subject} ${details.number}`;
+    mydialogh2.innerHTML = details.title;
+    mydialogInfo.innerHTML = details.description;
+    mydialog.showModal();
+}

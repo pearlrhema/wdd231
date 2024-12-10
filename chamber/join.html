@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Godwin Essien">
+    <meta name="description"
+        content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+    <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://github.com/pearlrhema/wdd231/blob/main/chamber/images/ogImage.jpg">
+    <meta property="og:url" content="https://pearlrhema.github.io/wdd231/chamber/directory.html">
+    <title>Godwin Akpan Essien - WDD 231 - Web Frontend Development 1</title>
+    <link rel="icon" href="webpagefavicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <!-- <script src="/scripts/homepage.js" defer></script> -->
+</head>
+
+<body>
+    <header>
+        <img src="images/uptimized-image.webp" alt="Godwin Akpan Essien Profile image">
+        <h1>Godwin Akpan Essien</h1>
+        <a id="menu" href="#"></a>
+    </header>
+
+    <nav>
+        <ul class="navigation">
+            <li><a href="#" class="current-page">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="#">GitHub Profile</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <dialog id="mydialog">
+            <h1></h1>
+            <div>
+                <h2>Sample Title</h2>
+                <button>X</button>
+            </div>
+            <p></p>
+        </dialog>
+        <h1>Members Registration</h1>
+
+        <form method="GET" action="thankyou.html" class="designOne"> <label>First Name
+                <input type="text" name="first_name" required autocomplete="given-name" title="Your First Name">
+            </label>
+            <label>Last Name
+                <input type="text" name="last_name" required autocomplete="family-name" title="Your Last Name">
+            </label>
+            <label>Organizational Title
+                <input type="text" name="organizational_title" autocomplete="organization-title"
+                    title="Your Organizational Title" pattern="[A-Za-z-\s]{7,}" placeholder="e.g. Manager">
+            </label>
+            <label>Email
+                <input type="email" name="email" required autocomplete="email" placeholder="john89@gmail.com"
+                    title="Your Email">
+            </label>
+            <label>Mobile Phone
+                <input type="tel" name="mobile" required autocomplete="tel" title="Your Mobile Phone">
+            </label>
+            <label>Business/Organization Name
+                <input type="text" name="business_name" required autocomplete="organization" title="Your Business Name">
+            </label>
+            <label>Membership Level
+                <select name="membership" required>
+                    <option value="">Select Membership Level</option>
+                    <option value="NP">NP Membership (No Fee)</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                </select>
+            </label>
+            <label>Business/Organization Description
+                <textarea name="description" title="Describe Your Business"></textarea>
+            </label>
+            <input type="hidden" name="timestamp" id="timestamp" value="">
+            <input type="submit" value="Schedule An Appointment">
+        </form>
+
+        <section class="membership-cards">
+            <div class="card">
+                <h3>NP Membership</h3>
+                <a href="#" id="openDialogLink1">More Info</a>
+            </div>
+            <dialog id="dialogBox">
+                <div></div>
+                <button id="closeDialogButton">Close</button>
+              </dialog>
+        </section>
+
+        <!-- <h1>Reuse one dialog over and over</h1>
+        <button id="openDialogButton1">Apple</button>
+        <button id="openDialogButton2">Orange</button>
+        <button id="openDialogButton3">Bannana</button>
+        <dialog id="dialogBox">
+            <div></div>
+            <button id="closeDialogButton">Close</button>
+        </dialog> -->
+
+        <!-- Modals -->
+        <!-- <div id="openDialog1" class="modal">
+            <span class="close" data-close>×</span>
+            <h2>NP Membership</h2>
+            <p>Details about NP Membership.</p>
+        </div>
+        <div id="bronze-modal" class="modal">
+            <span class="close" data-close>×</span>
+            <h2>Bronze Membership</h2>
+            <p>Details about Bronze Membership.</p>
+        </div>
+        <div id="silver-modal" class="modal">
+            <span class="close" data-close>×</span>
+            <h2>Silver Membership</h2>
+            <p>Details about Silver Membership.</p>
+        </div>
+        <div id="gold-modal" class="modal">
+            <span class="close" data-close>×</span>
+            <h2>Gold Membership</h2>
+            <p>Details about Gold Membership.</p>
+        </div> -->
+        <!-- <div class="modal-overlay"></div> -->
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Godwin Akpan Essien, Nigeria</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script src="scripts/join.js"></script>
+</body>
