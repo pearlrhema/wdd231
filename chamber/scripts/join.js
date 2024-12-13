@@ -1,3 +1,6 @@
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+
 // Function to show the benefits modal with dynamic content
 function showBenefitsModal(title, cost, benefits) {
     const modal = document.querySelector('#benefitsModal');

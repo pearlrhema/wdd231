@@ -24,9 +24,19 @@ function show(cup) {
 }//
 
 const showInfo = document.querySelector("#results");
-showInfo.innerHTML = `<p> Appointment for ${show("first_name")}</P>
-<p>Proxy ${show("ordinance")} on ${show("fecha")} in the ${show("location")} Temple
-<p>email <a href="${show("email")}">${show("email")}</a> </p>`;
+showInfo.innerHTML = `<p><strong> First Name:</strong> ${show("first_name")}</P>
+<p><strong> Last Name: </strong>${show("last_name")}</P>
+<p><strong>Organizational Title: </strong>${show("organizational_title")}</P>
+<p><strong> Mobile: </strong>${show("mobile")}</P>
+<p><strong> Email: </strong><a href="${show("email")}">${show("email")}</a> </p>
+<p><strong>Business Name: </strong>${show("business_name")}</P>
+<p><strong> Membership: </strong>${show("membership")}</P>
+<p><strong> Description: </strong>${show("description")}</P>
+<p><strong> Timestamp: </strong>${show("timestamp")}</P>
+`;
+
+// document.getElementById('timestamp').text = new Date().getFullYear();
+// document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
 
 // const openDialogLink1 = document.querySelector("#openDialogLink1");
 // const dialogBox = document.querySelector("#dialogBox");
