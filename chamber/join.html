@@ -30,68 +30,99 @@
 
     <nav>
         <ul class="navigation">
-            <li><a href="#" class="current-page">Home</a></li>
-            <li><a href="#">Chamber</a></li>
-            <li><a href="#">GitHub Profile</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li><a href="index.html" class="current-page">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="#">Discover</a></li>
         </ul>
     </nav>
     <main>
-        <dialog id="mydialog">
-            <h1></h1>
-            <div>
-                <h2>Sample Title</h2>
-                <button>X</button>
-            </div>
-            <p></p>
-        </dialog>
-        <h1>Members Registration</h1>
-
-        <form method="GET" action="thankyou.html" class="designOne"> <label>First Name
-                <input type="text" name="first_name" required autocomplete="given-name" title="Your First Name">
-            </label>
-            <label>Last Name
-                <input type="text" name="last_name" required autocomplete="family-name" title="Your Last Name">
-            </label>
-            <label>Organizational Title
-                <input type="text" name="organizational_title" autocomplete="organization-title"
-                    title="Your Organizational Title" pattern="[A-Za-z-\s]{7,}" placeholder="e.g. Manager">
-            </label>
-            <label>Email
-                <input type="email" name="email" required autocomplete="email" placeholder="john89@gmail.com"
-                    title="Your Email">
-            </label>
-            <label>Mobile Phone
-                <input type="tel" name="mobile" required autocomplete="tel" title="Your Mobile Phone">
-            </label>
-            <label>Business/Organization Name
-                <input type="text" name="business_name" required autocomplete="organization" title="Your Business Name">
-            </label>
-            <label>Membership Level
-                <select name="membership" required>
-                    <option value="">Select Membership Level</option>
-                    <option value="NP">NP Membership (No Fee)</option>
-                    <option value="Bronze">Bronze Membership</option>
-                    <option value="Silver">Silver Membership</option>
-                    <option value="Gold">Gold Membership</option>
-                </select>
-            </label>
-            <label>Business/Organization Description
-                <textarea name="description" title="Describe Your Business"></textarea>
-            </label>
-            <input type="hidden" name="timestamp" id="timestamp" value="">
-            <input type="submit" value="Schedule An Appointment">
-        </form>
-
         <section class="membership-cards">
-            <div class="card">
-                <h3>NP Membership</h3>
-                <a href="#" id="openDialogLink1">More Info</a>
+            <div class="form-container">
+                <h2>Membership Application Form</h2>
+                <form method="GET" action="thankyou.html" class="designOne"> <label>First Name
+                        <input type="text" name="first_name" required autocomplete="given-name" title="Your First Name">
+                    </label>
+                    <label>Last Name
+                        <input type="text" name="last_name" required autocomplete="family-name" title="Your Last Name">
+                    </label>
+                    <label>Organizational Title
+                        <input type="text" name="organizational_title" autocomplete="organization-title"
+                            title="Your Organizational Title" pattern="[A-Za-z-\s]{7,}" placeholder="e.g. Manager">
+                    </label>
+                    <label>Email
+                        <input type="email" name="email" required autocomplete="email" placeholder="john89@gmail.com"
+                            title="Your Email">
+                    </label>
+                    <label>Mobile Phone
+                        <input type="tel" name="mobile" required autocomplete="tel" title="Your Mobile Phone">
+                    </label>
+                    <label>Business/Organization Name
+                        <input type="text" name="business_name" required autocomplete="organization"
+                            title="Your Business Name">
+                    </label>
+                    <label>Membership Level
+                        <select name="membership" required>
+                            <option value="">Select Membership Level</option>
+                            <option value="NP">NP Membership (No Fee)</option>
+                            <option value="Bronze">Bronze Membership</option>
+                            <option value="Silver">Silver Membership</option>
+                            <option value="Gold">Gold Membership</option>
+                        </select>
+                    </label>
+                    <label>Business/Organization Description
+                        <textarea name="description" title="Describe Your Business"></textarea>
+                    </label>
+                    <input type="hidden" name="timestamp" id="timestamp" value="">
+                    <input type="submit" value="Schedule An Appointment">
+                </form>
             </div>
-            <dialog id="dialogBox">
-                <div></div>
-                <button id="closeDialogButton">Close</button>
-              </dialog>
+
+            <!-- Membership Cards -->
+            <div id="membershipContainer" class="membership-container">
+                <h2>Membership Levels</h2>
+                <!-- Card 1 - Basic Membership -->
+                <div class="card" data-title="Basic Membership" data-cost="$50/year"
+                    data-benefits="Access to basic events, Monthly newsletter, Discounts on events">
+                    <h3>NP Membership</h3>
+                    <p>Cost: $50/year</p>
+                    <a href="#" class="showModal">View Benefits</a>
+                </div>
+
+                <!-- Card 2 - Standard Membership -->
+                <div class="card" data-title="Standard Membership" data-cost="$100/year"
+                    data-benefits="Access to all basic and standard events, Training opportunities, Advertising in the newsletter, Special event discounts">
+                    <h3>Bronze Membership</h3>
+                    <p>Cost: $100/year</p>
+                    <a href="#" class="showModal">View Benefits</a>
+                </div>
+
+                <!-- Card 3 - Premium Membership -->
+                <div class="card" data-title="Premium Membership" data-cost="$200/year"
+                    data-benefits="All benefits of Standard Membership, Spotlight on the homepage, Exclusive access to premium events, Priority registration for events">
+                    <h3>Silver Membership</h3>
+                    <p>Cost: $200/year</p>
+                    <a href="#" class="showModal">View Benefits</a>
+                </div>
+
+                <!-- Card 4 - VIP Membership -->
+                <div class="card" data-title="VIP Membership" data-cost="$500/year"
+                    data-benefits="All benefits of Premium Membership, Exclusive VIP-only events, Custom advertising options, Personalized assistance">
+                    <h3>Gold Membership</h3>
+                    <p>Cost: $500/year</p>
+                    <a href="#" class="showModal">View Benefits</a>
+                </div>
+            </div>
+
+            <!-- Modal for Benefits -->
+            <div id="benefitsModal" class="modal">
+                <div class="modal-content">
+                    <span id="closeModal" class="close">&times;</span>
+                    <h2 id="modalTitle">Membership Benefits</h2>
+                    <p id="modalCost"></p>
+                    <ul id="modalBenefits"></ul>
+                </div>
+            </div>
         </section>
 
         <!-- <h1>Reuse one dialog over and over</h1>

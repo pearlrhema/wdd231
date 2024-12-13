@@ -1,42 +1,49 @@
-const currentUrl = window.location.href;
-console.log(currentUrl);
+// Function to show the benefits modal with dynamic content
+function showBenefitsModal(title, cost, benefits) {
+    const modal = document.querySelector('#benefitsModal');
+    const modalTitle = document.querySelector('#modalTitle');
+    const modalCost = document.querySelector('#modalCost');
+    const modalBenefits = document.querySelector('#modalBenefits');
 
-//divide the url into two halves
-const everything = currentUrl.split("?");
-console.log(everything);
+    // Set modal content dynamically
+    modalTitle.textContent = title;
+    modalCost.textContent = `Cost: ${cost}`;
+    modalBenefits.innerHTML = '';  // Clear any previous content
 
-//grab just the second half
-let formData = everything[1].split("&");
-console.log(formData);
-
-function show(cup) {
-    // console.log(cup);
-    formData.forEach(element => {
-        // element=element.split("=")
-        // console.log(element);
-        if (element.startsWith(cup)) {
-            result = element.split("=")[1].replace("%2B", "")
-            // result = result.replace("%2B", "")
-            result = result.replace("%40", "@")
-        }
+    // Add benefits as list items
+    benefits.split(',').forEach(benefit => {
+        const listItem = document.createElement('li');
+        listItem.textContent = benefit.trim();
+        modalBenefits.appendChild(listItem);
     });
-    return (result)
-}//
 
-const showInfo = document.querySelector("#results");
-showInfo.innerHTML = `<p> Appointment for ${show("first_name")}</P>
-<p>Proxy ${show("ordinance")} on ${show("fecha")} in the ${show("location")} Temple
-<p>email <a href="${show("email")}">${show("email")}</a> </p>`;
+    // Show the modal
+    modal.style.display = 'flex';
+}
 
-const openDialogLink1 = document.querySelector("#openDialogLink1");
-const dialogBox = document.querySelector("#dialogBox");
-const closeDialogButton = document.querySelector("#closeDialogButton");
+// Add event listeners to all 'View Benefits' links
+document.querySelectorAll('.showModal').forEach(card => {
+    card.addEventListener('click', (event) => {
+        event.preventDefault();
 
-openDialogLink1.addEventListener("click", (event) => {
-    // event.preventDefault();
-    dialogBox.showModal(); // Show the dialog box
+        // Retrieve card data attributes
+        const title = card.parentElement.getAttribute('data-title');
+        const cost = card.parentElement.getAttribute('data-cost');
+        const benefits = card.parentElement.getAttribute('data-benefits');
+
+        // Show the modal with the correct content
+        showBenefitsModal(title, cost, benefits);
+    });
 });
 
-closeDialogButton.addEventListener("click", () => {
-    dialogBox.close(); // Close the dialog box
+// Close the modal when the 'X' is clicked
+document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('benefitsModal').style.display = 'none';
+});
+
+// Close the modal if clicking outside the modal content
+window.addEventListener('click', (event) => {
+    if (event.target === document.querySelector('#benefitsModal')) {
+        document.getElementById('benefitsModal').style.display = 'none';
+    }
 });
