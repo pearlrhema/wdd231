@@ -1,52 +1,62 @@
-const currentUrl = window.location.href;
-console.log(currentUrl);
+document.addEventListener('DOMContentLoaded', function () {
+    // Set timestamp
+    const now = new Date();
 
-//divide the url into two halves
-const everything = currentUrl.split("?");
-console.log(everything);
+    // Custom format: YYYY-MM-DD HH:mm:ss
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
 
-//grab just the second half
-let formData = everything[1].split("&");
-console.log(formData);
+    const formattedTimestamp = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
-function show(cup) {
-    // console.log(cup);
-    formData.forEach(element => {
-        // element=element.split("=")
-        // console.log(element);
-        if (element.startsWith(cup)) {
-            result = element.split("=")[1].replace("%2B", "")
-            // result = result.replace("%2B", "")
-            result = result.replace("%40", "@")
-        }
-    });
-    return (result)
-}//
+    // Set the hidden input field
+    const timestampInput = document.getElementById('timestamp');
+    if (timestampInput) {
+        timestampInput.value = formattedTimestamp;
+        console.log('Timestamp set:', formattedTimestamp);
+    } else {
+        console.error('Timestamp input field not found!');
+    }
 
-const showInfo = document.querySelector("#results");
-showInfo.innerHTML = `<p><strong> First Name:</strong> ${show("first_name")}</P>
-<p><strong> Last Name: </strong>${show("last_name")}</P>
-<p><strong>Organizational Title: </strong>${show("organizational_title")}</P>
-<p><strong> Mobile: </strong>${show("mobile")}</P>
-<p><strong> Email: </strong><a href="${show("email")}">${show("email")}</a> </p>
-<p><strong>Business Name: </strong>${show("business_name")}</P>
-<p><strong> Membership: </strong>${show("membership")}</P>
-<p><strong> Description: </strong>${show("description")}</P>
-<p><strong> Timestamp: </strong>${show("timestamp")}</P>
-`;
+    // Process URL parameters
+    const currentUrl = window.location.href;
+    const everything = currentUrl.split("?");
+    if (everything.length < 2) {
+        console.error("No URL parameters found!");
+        return;
+    }
 
-// document.getElementById('timestamp').text = new Date().getFullYear();
-// document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+    const formData = everything[1].split("&");
 
-// const openDialogLink1 = document.querySelector("#openDialogLink1");
-// const dialogBox = document.querySelector("#dialogBox");
-// const closeDialogButton = document.querySelector("#closeDialogButton");
+    // Function to extract and decode a parameter
+    function show(param) {
+        let result = "";
+        formData.forEach((element) => {
+            if (element.startsWith(param)) {
+                result = decodeURIComponent(element.split("=")[1] || "").replace(/\+/g, " ");
+            }
+        });
+        return result;
+    }
 
-// openDialogLink1.addEventListener("click", (event) => {
-//     // event.preventDefault();
-//     dialogBox.showModal(); // Show the dialog box
-// });
-
-// closeDialogButton.addEventListener("click", () => {
-//     dialogBox.close(); // Close the dialog box
-// });
+    // Render data in #results
+    const showInfo = document.querySelector("#results");
+    if (showInfo) {
+        showInfo.innerHTML = `
+            <p><strong>First Name:</strong> ${show("first_name")}</p>
+            <p><strong>Last Name:</strong> ${show("last_name")}</p>
+            <p><strong>Organizational Title:</strong> ${show("organizational_title")}</p>
+            <p><strong>Mobile:</strong> ${show("mobile")}</p>
+            <p><strong>Email:</strong> <a href="mailto:${show("email")}">${show("email")}</a></p>
+            <p><strong>Business Name:</strong> ${show("business_name")}</p>
+            <p><strong>Membership:</strong> ${show("membership")}</p>
+            <p><strong>Description:</strong> ${show("description")}</p>
+            <p><strong>Timestamp:</strong> ${show("timestamp")}</p>
+        `;
+    } else {
+        console.error("#results container not found!");
+    }
+});

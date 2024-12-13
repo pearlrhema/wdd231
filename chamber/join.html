@@ -7,11 +7,11 @@
     <meta name="author" content="Godwin Essien">
     <meta name="description"
         content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
-    <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
+    <meta property="og:title" content="Ikot Ekpene Chamber of Commerce Join Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://github.com/pearlrhema/wdd231/blob/main/chamber/images/ogImage.jpg">
     <meta property="og:url" content="https://pearlrhema.github.io/wdd231/chamber/directory.html">
-    <title>Godwin Akpan Essien - WDD 231 - Web Frontend Development 1</title>
+    <title>Ikot Ekpene Chamber of Commerce Join Page</title>
     <link rel="icon" href="webpagefavicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,8 @@
                     </label>
                     <label>Organizational Title
                         <input type="text" name="organizational_title" autocomplete="organization-title"
-                            title="Your Organizational Title" pattern="[A-Za-z-\s]{7,}" placeholder="e.g. Manager">
+                            title="Your Organizational Title (at least 7 characters, using only letters, hyphens, and spaces)"
+                            pattern="[A-Za-z-\s]{7,}" placeholder="e.g. Manager">
                     </label>
                     <label>Email
                         <input type="email" name="email" required autocomplete="email" placeholder="john89@gmail.com"
@@ -161,7 +162,8 @@
         <p>&copy; <span id="currentyear"></span> Godwin Akpan Essien, Nigeria</p>
         <p id="lastModified"></p>
     </footer>
-    <script src="scripts/join.js"></script>
+    <script src="scripts/join.js" defer></script>
+    <!-- <script src="scripts/timestamp.js"></script> -->
 </body>
 
 </html>
