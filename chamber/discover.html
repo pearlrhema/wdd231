@@ -6,106 +6,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Godwin Essien">
     <meta name="description"
-        content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+        content="WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
     <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://github.com/pearlrhema/wdd231/blob/main/chamber/images/ogImage.jpg">
     <meta property="og:url" content="https://pearlrhema.github.io/wdd231/chamber/directory.html">
     <title>Chamber Of Commerce Landing Page</title>
     <link rel="icon" href="webpagefavicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/discover.css">
 </head>
 
 <body>
     <header>
         <img src="images/uptimized-image.webp" alt="Godwin Akpan Essien Profile image">
-        <h1>Ikot Ekpene Chamber of Commerce</h1>
+        <h1>Godwin Akpan Essien</h1>
         <a id="menu" href="#"></a>
     </header>
 
     <nav>
         <ul class="navigation">
-            <li><a href="#" class="current-page">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html">Join</a></li>
-            <li><a href="#">Discover</a></li>
+            <li><a href="discover.html" class="current-page">Discover</a></li>
         </ul>
     </nav>
-    <div class="hero">
-        <img src="images/ogImage.jpg" alt="Welcome to Godwin Chamber of Commerce" loading="lazy">
-        <div class="content">
-            <a href="join.html" class="hero-cta-link">Click to join</a>
-        </div>
-    </div>
-    <main>
 
-        <section class="card" id="chamber-events">
-            <h3>Events</h3>
+    <main class="grid-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Welcome Back!</h2>
+            <p id="visit-message">Checking your last visit...</p>
+            <h3>Events & Attractions</h3>
             <ul>
-                <li>
-                    <strong>Networking Mixer</strong>
-                    <p>Date: February 15, 2024 | Time: 6:00 PM - 8:00 PM</p>
-                    <p>Location: Ikot Abasi, Ikpe Ikot Akpan</p>
-                    <a href="#" target="_blank">Register Now</a>
-                </li>
-                <li>
-                    <strong>Small Business Workshop: Marketing Strategies</strong>
-                    <p>Date: March 5, 2024 | Time: 9:00 AM - 12:00 PM</p>
-                    <p>Location: 20 Calabar Itu Road, Ikot Ekpene</p>
-                    <a href="#" target="_blank">Register Now</a>
-                </li>
-                <li>
-                    <strong>Annual Chamber Gala</strong>
-                    <p>Date: April 20, 2024 | Time: 7:00 PM - 10:00 PM</p>
-                    <p>Location: City Convention Center, 789 Gala Blvd, Cityville</p>
-                    <a href="#" target="_blank">Register Now</a>
-                </li>
+                <li>Annual Chamber Conference</li>
+                <li>Community Meetups</li>
+                <li>City Landmarks Tour</li>
             </ul>
-        </section>
+        </aside>
 
-        <section class="card" id="place">
-            <h3>Current Weather</h3>
-            <p>The current temperature in Ikot Ekpene, Nigeria is <span id="current-temp"></span></p>
-            <figure id="weather-icon">
-                <!-- <figcaption></figcaption> -->
-            </figure>
-        </section>
-        <section class="card" id="completion">
-            <h3>Weather Forecast</h3>
-            <div class="forecast-item" id="icon1">
-                <p>Day 1: <span id="dayone"></span> <span id="description1"></span></p>
+        <!-- Photo Gallery -->
+        <section class="gallery">
+            <h2>Gallery of Local Interest</h2>
+            <div class="image-grid">
+                <!-- Images will be dynamically loaded -->
+                <figure>
+                    <img data-src="images/Akwa-christmas-village.jpeg" alt="Community Event" loading="lazy">
+                    <figcaption>Community Event</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/landmark.jpg" alt="City Landmark" loading="lazy">
+                    <figcaption>City Landmark</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/market.jpg" alt="Market Scene" loading="lazy">
+                    <figcaption>Market Scene</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/park.jpg" alt="City Park" loading="lazy">
+                    <figcaption>City Park</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/ikot-ekpene1.jpg" alt="Local Festival" loading="lazy">
+                    <figcaption>Local Festival</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/office.jpg" alt="Business Center" loading="lazy">
+                    <figcaption>Business Center</figcaption>
+                </figure>
             </div>
-            <div class="forecast-item" id="icon2">
-                <p>Day 2: <span id="daytwo"></span> <span id="description2"></span></p>
-            </div>
-            <div class="forecast-item" id="icon3">
-                <p>Day 3: <span id="daythree"></span> <span id="description3"></span></p>
-            </div>
-        </section>
-        <h3>Business List</h3>
-        <div class="menu">
-            <button id="grid">⏹️Grid</button>
-            <button id="list">📄List</button>
-        </div>
-        <div id="cards"></div>
-
-        <!-- Call-to-Action Section -->
-        <section class="call-to-action">
-            <h3>Join our Chamber of Commerce</h3>
-            <p>Be part of a thriving business community. Network with other professionals, get access to exclusive
-                events, and grow your business.</p>
-            <a href="join.html" class="cta-link">Click to join the chamber</a>
         </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> Godwin Akpan Essien, Nigeria</p>
-        <p id="lastModified"></p>
+        <p>&copy;<span id="year"></span> Godwin Akpan Essien</p>
+        <p class="lastmodified">Last Modified <span id="lastmodified"></span></p>
     </footer>
-    <script src="scripts/index.js" defer></script>
+
+    <script src="scripts/discover.js" defer></script>
 </body>
 
 </html>

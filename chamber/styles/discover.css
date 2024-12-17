@@ -1,0 +1,283 @@
+/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Roboto, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+}
+
+.menu {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-color: rgb(44, 88, 124);
+    color: white;
+    text-align: left;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#menu {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #eee;
+    border: solid white;
+    border-radius: 20%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#menu::before {
+    content: "≡";
+}
+
+.navigation {
+    list-style: none;
+    margin: 1px;
+    padding: 0;
+    display: none;
+}
+
+/* When the menu is toggled, this class is added */
+.navigation.show {
+    display: block; /* Show navigation */
+}
+
+/* When the menu icon is clicked, it changes to an "X" */
+#menu.show::before {
+    content: "X"; /* Change to 'X' when open */
+}
+
+.navigation li {
+    display: none;
+}
+
+nav {
+    background-color: black;
+}
+
+.navigation a {
+    display: block;
+    padding: 0.75rem;
+    text-align: left;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 700;
+    transition: 0.5s;
+    font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.navigation a:hover,
+a:active {
+    background-color: rgb(44, 88, 124);
+}
+
+.show li {
+    display: block;
+}
+
+#menu.show::before {
+    content: "X";
+}
+
+/* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: #dbe7f6;
+    /* padding: 1rem; */
+    border-radius: 5px;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.image-grid {
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); */
+    gap: 1rem;
+    padding: 0;
+}
+
+.image-grid figure {
+    margin: 0;
+    text-align: center;
+}
+
+.image-grid img {
+    width: 50%;
+    height: auto;
+    display: block;
+    justify-self: center;
+    transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+}
+
+figure {
+    position: relative;
+    overflow: hidden;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.sidebar h3 {
+    margin-top: 1rem;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.gallery {
+    text-align: center;
+    background-color: rgb(44, 88, 124);
+    color: white;
+    padding: 10px 0;
+    margin: 0;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: rgb(44, 88, 124);
+    color: white;
+    padding: 10px 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Switch to single column */
+        gap: 10px;
+    }
+
+    .sidebar {
+        padding: 0.5rem;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        /* Two columns for medium screens */
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Single column layout */
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        /* Single column for small screens */
+        gap: 5px;
+    }
+
+    .sidebar {
+        padding: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .navigation a {
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 576px) {
+    .navigation {
+        display: flex;
+    }
+
+    .navigation li {
+        display: block;
+        flex: 1 1 100%;
+    }
+
+    .navigation a {
+        text-align: center;
+    }
+
+    #menu {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 205px auto;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    header img {
+        width: 150px;
+        height: auto;
+    }
+}

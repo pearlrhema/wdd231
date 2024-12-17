@@ -567,6 +567,13 @@ p {
     margin-top: 0.5rem;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px;
+    padding: 20px;
+}
+
 
 @media only screen and (min-width: 576px) {
     .navigation {
