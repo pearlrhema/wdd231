@@ -77,12 +77,14 @@ header h1 {
 
 /* When the menu is toggled, this class is added */
 .navigation.show {
-    display: block; /* Show navigation */
+    display: block;
+    /* Show navigation */
 }
 
 /* When the menu icon is clicked, it changes to an "X" */
 #menu.show::before {
-    content: "X"; /* Change to 'X' when open */
+    content: "X";
+    /* Change to 'X' when open */
 }
 
 .navigation li {
@@ -151,7 +153,7 @@ a:active {
 }
 
 .image-grid img {
-    width: 50%;
+    width: 250px;
     height: auto;
     display: block;
     justify-self: center;
@@ -160,6 +162,11 @@ a:active {
 
 .image-grid img:hover {
     transform: scale(1.05);
+}
+
+img {
+    width: 250px;
+    height: auto;
 }
 
 figure {
