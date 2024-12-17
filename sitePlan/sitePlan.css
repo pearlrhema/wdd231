@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333333;
+    /* Text color: Deep Charcoal */
+}
+
+header {
+    background-color: #333333;
+    /* Header background: Deep Charcoal */
+    padding: 10px;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    background-color: #FFCC00;
+    /* Hero section background: Warm Yellow */
+    padding: 40px;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333333;
+    /* Text color: Deep Charcoal */
+}
+
+.cta {
+    background-color: #FFCC00;
+    /* CTA buttons: Warm Yellow */
+    color: #333333;
+    /* Text color: Deep Charcoal */
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.cta:hover {
+    background-color: #e6b800;
+    /* Slightly darker yellow on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #333333;
+    /* Footer background: Deep Charcoal */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header,
+main,
+footer {
+    max-width: 640px;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+main {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    justify-content: center;
+    max-width: 501px;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+section {
+    background: #e6e600;
+    /* color: #205E3B; */
+    padding: 1rem;
+    margin: 2px;
+    border: solid #333333;
+}
+
+header,
+footer {
+    text-align: center;
+    /* background-color: #205E3B; */
+    color: white;
+    font-family: Dancing Script;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+figcaption {
+    color: #205E3B;
+    text-align: center;
+}
