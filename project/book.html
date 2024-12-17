@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Godwin Essien">
+    <meta name="description"
+        content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+    <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://github.com/pearlrhema/wdd231/blob/main/chamber/images/ogImage.jpg">
+    <meta property="og:url" content="https://pearlrhema.github.io/wdd231/chamber/directory.html">
+    <title>Chamber Of Commerce Discover Page</title>
+    <link rel="icon" href="webpagefavicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <main>
+        
+        <form id="productReviewForm" method="get" action="review.html" class="container">
+            <fieldset>
+                <legend><strong>Product Name</strong></legend>
+                <select id="productName" name="productName" required>
+                <option value="" disabled selected>Select a Product ...</option>
+            </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend><strong>Overall Rating *</strong></legend>
+                <div class="stars">
+                <label><input type="radio" id="1_star" name="rating" value="1" required>★</label>
+                <label><input type="radio" id="2_stars"  name="rating" value="2" required>★★</label>
+                <label><input type="radio" id="3_stars" name="rating" value="3" required>★★★</label>
+                <label><input type="radio" id="4_stars" name="rating" value="4" required>★★★★</label>
+                <label><input type="radio" id="5_stars" name="rating" value="5" required>★★★★★</label>
+                </div>
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend><strong>Date of Installation</strong></legend>
+                <label><input type="date" id="installationDate" name="installationDate" required></label>
+            </fieldset>
+            
+            
+            <fieldset>
+                <legend><strong>Which features did you find useful in the product?</strong>  <small>(Check all that apply)</small></legend>
+                <label><input type="checkbox" id="Durability" name="Durability" value="yes">Durability</label>
+                <label><input type="checkbox" id="Ease_of_Use" name="Ease_of_use" value="yes">Ease of Use</label>
+                <label><input type="checkbox" id="Performance" name="Performance" value="yes">Performance</label>
+                <label><input type="checkbox" id="Design" name="Design" value="yes">Design</label>
+                <label><input type="checkbox" id="Satisfaction" name="Satisfaction" value="yes">Satisfaction</label>
+                <label><input type="checkbox" id="Taste" name="Test" value="yes">Taste</label>
+            </fieldset>
+            <fieldset>
+                <legend><strong>Written Review </strong> <small>(Optional)</small></legend>
+                <textarea id="writtenReview" name="writtenReview"></textarea>
+            </fieldset>
+            
+            <fieldset>
+                <legend><strong> Your Name </strong><small>(Optional)</small></legend>
+            <label><input type="text" id="userName" name="userName"></label>
+            </fieldset>
+            
+            <label><input type="submit" value="Post Review"></label>
+        </form>
+        <!-- </div> -->
+    </main>
+    
+    <footer>
+        <p>&copy;<span id="year"></span> Godwin Akpan Essien</p>
+        <p class="lastmodified">Last Modified <span id="lastmodified"></span></p>
+    </footer>
+    <script src="scripts/form.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Godwin Essien">
+        <meta name="description"
+            content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+        <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://github.com/pearlrhema/wdd231/blob/main/chamber/images/ogImage.jpg">
+        <meta property="og:url" content="https://pearlrhema.github.io/wdd231/chamber/directory.html">
+        <title>Customer Review Page</title>
+        <link rel="icon" href="webpagefavicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="styles/index.css">
+    </head>
+<body>
+    <header class="site-header">
+        <div>
+            <h1>Thank You for Your Review!</h1>
+        </div>
+    </header>
+    <main>
+        <div class="review-container">
+            <p>Your review has been submitted successfully.</p>
+            <p class="review-text">You have completed <span id="reviewCount">0</span> reviews.</p>
+        </div>
+    </main>
+    <footer>
+        <p>©<span id="currentYear"></span> Godwin Akpan Essien</p>
+        <p id="lastModified"></p>
+    </footer>
+    <script>
+        // Display the review count
+        const reviewCounter = localStorage.getItem('reviewCounter') || 0;
+        document.getElementById('reviewCount').textContent = reviewCounter;
+    </script>
+</body>
+</html>

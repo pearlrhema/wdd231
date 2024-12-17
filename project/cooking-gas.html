@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Godwin Essien">
+        <meta name="description"
+            content="This is a WDD 231 - Web Frontend Development - course assignment portal for Godwin Akpan Essien">
+        <meta property="og:title" content="Godwin Akpan Essien - WDD231 Course Home Page">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://github.com/pearlrhema/wdd231/blob/main/chamber/images/ogImage.jpg">
+        <meta property="og:url" content="https://pearlrhema.github.io/wdd231/chamber/directory.html">
+        <title>Chamber Of Commerce Discover Page</title>
+        <link rel="icon" href="webpagefavicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <!-- <link rel="stylesheet" href="styles/index.css"> -->
+        <link rel="stylesheet" href="styles/gas.css">
+    </head>
+<body>
+    <header>
+        <img src="images/logo-img.PNG" alt="Company Logo image">
+        <h1>Darson and Sons Enterprice</h1>
+        <a id="menu" href="#"></a>
+    </header>
+
+    <nav>
+        <ul class="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurant.html" >Restaurant</a></li>
+            <li><a href="cooking-gas.html" class="current-page">Cooking Gas</a></li>
+            <li><a href="book.html">Review</a></li>
+        </ul>
+    </nav>
+    
+  <main id="gridly">
+    <h2>Select From our Menu</h2>
+
+    <select id="sortBy" title="Choose a data filter.">
+      <option value="" disabled selected>Choose Category</option>
+      <option value="stove"> stove</option>
+      <option value="cylinder">cylinder</option>
+      <option value="burner">utensils</option>
+    </select>
+
+    <div id="Delicacies">
+    </div>
+
+    <dialog id="foodDialog">
+        <h3 id="dialogTitle"></h3>
+        <p id="dialogDescription"></p>
+        <button id="closeDialog">Close</button>
+    </dialog>
+  </main>
+
+
+  <footer>
+    <p>&copy;<span id="year"></span> Godwin Akpan Essien</p>
+    <p class="lastmodified">Last Modified <span id="lastmodified"></span></p>
+</footer>
+<script src="scripts/index.js" defer></script>
+<script src="scripts/utensils.js" defer></script>
+</body>
+</html>
